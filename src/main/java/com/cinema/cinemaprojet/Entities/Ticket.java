@@ -5,24 +5,26 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Date;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Projection {
+public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date projectionDate;
+    private String clientName;
     private double price;
+    private int paymentCode;
+    private boolean reserved;
     @ManyToOne
-    private Movie movie;
+    private Seat seat;
     @ManyToOne
-    private Room room;
-    @OneToMany(mappedBy = "projection")
-    private Collection<Ticket> tickets;
-    @ManyToOne
-    private Session session;
+    private Projection projection;
+
+
+
+
+
 }

@@ -23,6 +23,8 @@ public class Movie {
     private String tag;
     @OneToMany(mappedBy = "movie")
     private Collection<Projection> projections;
+    @ManyToOne
+    private Category category;
 
 
 

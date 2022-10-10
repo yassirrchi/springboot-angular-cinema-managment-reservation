@@ -18,5 +18,8 @@ public class Seat {
     private double longitude,latitude,altitude;
     @ManyToOne
     private Room room;
+    @OneToMany(mappedBy = "seat")
+    private Collection<Ticket> tickets;
+
 
 }

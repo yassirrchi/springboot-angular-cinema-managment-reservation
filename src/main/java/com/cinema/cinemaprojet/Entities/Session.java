@@ -1,4 +1,5 @@
 package com.cinema.cinemaprojet.Entities;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,18 +12,13 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Projection {
+public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date projectionDate;
-    private double price;
-    @ManyToOne
-    private Movie movie;
-    @ManyToOne
-    private Room room;
-    @OneToMany(mappedBy = "projection")
-    private Collection<Ticket> tickets;
-    @ManyToOne
-    private Session session;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date startDate;
+    @OneToMany(mappedBy = "session")
+
+    private Collection<Projection> projections;
 }
