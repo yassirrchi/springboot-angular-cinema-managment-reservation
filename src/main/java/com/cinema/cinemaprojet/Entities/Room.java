@@ -15,6 +15,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private int numberOfSeats;
     @ManyToOne
     private Cinema cinema;
     @OneToMany(mappedBy = "room")

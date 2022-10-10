@@ -16,6 +16,7 @@ public class Cinema {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private int numberOfRooms;
     private double longitude,latitude,altitude;
     @OneToMany(mappedBy = "cinema")
     private Collection<Room> rooms;
