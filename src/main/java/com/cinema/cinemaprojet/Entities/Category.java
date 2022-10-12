@@ -1,4 +1,5 @@
 package com.cinema.cinemaprojet.Entities;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,5 +17,7 @@ public class Category {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "category")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
     private Collection<Movie> movies;
 }

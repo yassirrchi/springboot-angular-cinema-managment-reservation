@@ -1,4 +1,5 @@
 package com.cinema.cinemaprojet.Entities;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,8 @@ public class Seat {
     @ManyToOne
     private Room room;
     @OneToMany(mappedBy = "seat")
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Ticket> tickets;
 
 
